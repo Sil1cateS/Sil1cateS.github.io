@@ -63,7 +63,7 @@ function createNodes(datas, key) {
 //从数据创建连接
 function createLinks(data, sourceKey, targetKey, options = {}) {
 	const {
-		dropEmpty="false",
+		dropEmpty=false,
 		defaultSource = "Unknown",  // 默认源占位符
 		defaultTarget = "Unknown",  // 默认目标占位符
 		countStrategy = "occurrence",      // 计数策略：occurrence/weighted
@@ -184,7 +184,7 @@ function draw_specific_Sankey(recordData,options={}){
 		threshold=0,
 		filterKey="Is prize-winning paper",
 		filterValue="YES",
-		dropEmpty="false",
+		dropEmpty="true",
 	} = options
 	const {links, sources,targets} = createLinks(recordData,sourceKey, targetKey,{
 			dropEmpty,
@@ -204,7 +204,7 @@ function draw_multiple_Sankey(recordData,options={}){
 		threshold=0,
 		filterKey="Is prize-winning paper",
 		filterValue="YES",
-		dropEmpty="true",
+		dropEmpty=true,
 	} = options
 	var multilinks=[]
 	for (let i = 0; i < keySeries.length-1; i++) {
