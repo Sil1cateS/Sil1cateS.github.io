@@ -91,14 +91,14 @@ function createLinks(data, sourceKey, targetKey, options = {}) {
     let source = item[sourceKey];
 	
     if (isEmptyValue(source)) {
-		if (dropEmpty) return;
+		if (dropEmpty=="true") return;
 		source = defaultSource;
 	}
     
     // 处理目标值
     let target = item[targetKey];
     if (isEmptyValue(target)){
-		if(dropEmpty) return;
+		if(dropEmpty=="true") return;
 		target = defaultTarget;
 	} 
 		
@@ -184,7 +184,7 @@ function draw_specific_Sankey(recordData,options={}){
 		threshold=0,
 		filterKey="Is prize-winning paper",
 		filterValue="YES",
-		dropEmpty=false,
+		dropEmpty="false",
 	} = options
 	const {links, sources,targets} = createLinks(recordData,sourceKey, targetKey,{
 			dropEmpty,
@@ -204,7 +204,7 @@ function draw_multiple_Sankey(recordData,options={}){
 		threshold=0,
 		filterKey="Is prize-winning paper",
 		filterValue="YES",
-		dropEmpty=true,
+		dropEmpty="true",
 	} = options
 	var multilinks=[]
 	for (let i = 0; i < keySeries.length-1; i++) {
@@ -251,7 +251,7 @@ function file_loader(folder_path) {
 		
 		sourceSelect.property("value", "Field");
 		targetSelect.property("value", "Affiliation");
-		dropnaSelect.property("checked", true);
+		dropnaSelect.property("value", "true");
 		thresholdInput.property("value", 5);
 		
 		function getConfigParams() {
@@ -261,7 +261,7 @@ function file_loader(folder_path) {
 				threshold: Number(thresholdInput.property("value")),
 				filterKey: "Is prize-winning paper",
 				filterValue: "YES",
-				dropEmpty: dropnaSelect.property("checked")
+				dropEmpty: dropnaSelect.property("value")
 			};
 		}
 		
@@ -282,7 +282,7 @@ function file_loader(folder_path) {
 			threshold:5,
 			filterKey:"Is prize-winning paper",
 			filterValue:"YES",
-			dropEmpty:true,
+			dropEmpty:"true",
 		})
 		/*
 		draw_multiple_Sankey(recordData,{
