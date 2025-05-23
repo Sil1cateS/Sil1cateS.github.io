@@ -36,18 +36,27 @@
             		</select>
         		</div>
 				<div class="form-group">
+            		<label for="prized-select">仅获奖论文：</label>
+            		<select id="prized-select" name="prized">
+						<option value="NO" >No</option>
+						<option value="YES" selected>Yes</option>
+            		</select>
+        		</div>
+				<div class="form-group">
 					<label for="quantity">设置阈值：</label>
 					<input type="number" 
 						   id="threshold" 
 						   name="threshold"
-						   min="0" 
-						   max="100" 
+						   min="1" 
+						   max="1000" 
 						   step="1"
 						   value="10">
 				</div>
 			</div>
-			<div id="chart"></div>
+			<div id="sankey-chart"></div>
+			<div id="sankey-desc"></div>
 		</div>
+		
 	</div>
     
 	<div id="test"></div>
