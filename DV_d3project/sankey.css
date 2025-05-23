@@ -9,10 +9,14 @@
 
 .panel {
 	border: thin,#000000;
-	margin: 10%;
+	margin: 0%;
 }
 
 .toolbar {
 	display: grid;
-	grid-template-columns: 25% 25% 25% 25%;
+	grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.container {
+	padding:5% 20% ;
 }

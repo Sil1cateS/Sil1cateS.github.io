@@ -1,0 +1,32 @@
+[
+    {
+        "source": "Field",
+        "target": "Affiliation",
+        "text": "这张桑基图展示了诺贝尔奖获奖论文在“学科→机构”上的分布：物理学领域主要集中在芝加哥大学、伯克利、普林斯顿、加州理工等美国顶尖理工校园，欧洲仅有剑桥略有斩获；化学领域则是美国名校（哈佛、斯坦福、康奈尔、圣地亚哥）与德国马克斯·普朗克学会、英国分子生物学实验室形成美欧并重的格局；生理学或医学则由专门研究所（洛克菲勒、NIH、华盛顿大学圣路易斯分校）和综合性大学（哈佛、UCL）共同领衔，反映出各学科对美国高校和欧洲科研机构的不同依赖与协同。"
+    },
+    {
+        "source": "Field",
+        "target": "Journal",
+        "text": "这张桑基图将诺贝尔奖获奖论文按学科汇入期刊：物理学成果几乎全都发表在《Physical Review Letters》和《Physical Review》两大旗舰刊物，极少数分散到《Annalen der Physik》和《Philosophical Magazine Series 1》；化学领域既有在《Nature》这样的大众顶刊，也落在《Journal of the American Chemical Society》、《Journal of Chemical Physics》和《Helvetica Chimica Acta》等专业期刊；生理学或医学奖论文则既登上《Nature》、《Science》和《Proceedings of the National Academy of Sciences of the USA》这样的综合性高影响力期刊，也扎根于《Cell》、《Journal of Experimental Medicine》、《Journal of Biological Chemistry》及各类生理学核心期刊，体现出医学研究的广泛跨界与综合性。"
+    },
+    {
+        "source": "Affiliation",
+        "target": "Journal",
+        "text": "这张桑基图以机构为起点、期刊为终点，呈现了各大科研单位的诺贝尔奖论文倾向：芝加哥大学、加州理工、伯克利和贝尔实验室几乎全投向《Physical Review》，而分子生物学实验室与斯坦福则更青睐《Nature》；哈佛和麻省理工既有大量成果发表于《Physical Review Letters》，又在《Journal of Chemical Physics》和《Journal of Neurophysiology》间分流；马克斯·普朗克学会的大部分论文见诸《Surface Science》，威尔明顿大学主攻《Journal of the American Chemical Society》，以色列理工学院经常在《PNAS》亮相；洛克菲勒大学的医学发现多见于《Journal of Experimental Medicine》，国立卫生研究院和范德堡则贡献于《Journal of Biological Chemistry》，而圣路易斯华盛顿大学和伦敦大学学院则偏向《American Journal of Physiology》。这一分布不仅反映了各机构的学科侧重点，也折射出不同领域对期刊影响力的共识。"
+    },
+    {
+        "source": "Affiliation",
+        "target": "Field",
+        "text": "这张桑基图展示了诺贝尔奖获奖论文在“机构→学科”上的分布：物理学领域主要集中在芝加哥大学、伯克利、普林斯顿、加州理工等美国顶尖理工校园，欧洲仅有剑桥略有斩获；化学领域则是美国名校（哈佛、斯坦福、康奈尔、圣地亚哥）与德国马克斯·普朗克学会、英国分子生物学实验室形成美欧并重的格局；生理学或医学则由专门研究所（洛克菲勒、NIH、华盛顿大学圣路易斯分校）和综合性大学（哈佛、UCL）共同领衔，反映出各学科对美国高校和欧洲科研机构的不同依赖与协同。"
+    },
+    {
+        "source": "Journal",
+        "target": "Field",
+        "text": "这张桑基图将诺贝尔奖获奖论文按期刊汇入学科：物理学成果几乎全都发表在《Physical Review Letters》和《Physical Review》两大旗舰刊物，极少数分散到《Annalen der Physik》和《Philosophical Magazine Series 1》；化学领域既有在《Nature》这样的大众顶刊，也落在《Journal of the American Chemical Society》、《Journal of Chemical Physics》和《Helvetica Chimica Acta》等专业期刊；生理学或医学奖论文则既登上《Nature》、《Science》和《Proceedings of the National Academy of Sciences of the USA》这样的综合性高影响力期刊，也扎根于《Cell》、《Journal of Experimental Medicine》、《Journal of Biological Chemistry》及各类生理学核心期刊，体现出医学研究的广泛跨界与综合性。"
+    },
+    {
+        "source": "Journal",
+        "target": "Affiliation",
+        "text": "这张桑基图以为期刊起点、机构为终点，清晰地呈现了各大科研单位的诺贝尔奖论文倾向：芝加哥大学、加州理工、伯克利和贝尔实验室几乎全投向《Physical Review》，而分子生物学实验室与斯坦福则更青睐《Nature》；哈佛和麻省理工既有大量成果发表于《Physical Review Letters》，又在《Journal of Chemical Physics》和《Journal of Neurophysiology》间分流；马克斯·普朗克学会的大部分论文见诸《Surface Science》，威尔明顿大学主攻《Journal of the American Chemical Society》，以色列理工学院经常在《PNAS》亮相；洛克菲勒大学的医学发现多见于《Journal of Experimental Medicine》，国立卫生研究院和范德堡则贡献于《Journal of Biological Chemistry》，而圣路易斯华盛顿大学和伦敦大学学院则偏向《American Journal of Physiology》。这一分布不仅反映了各机构的学科侧重点，也折射出不同领域对期刊影响力的共识。"
+    }
+]
