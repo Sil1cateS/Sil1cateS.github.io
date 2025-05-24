@@ -1,0 +1,90 @@
+/* CSS Document */
+
+
+.container {
+	padding:0 20%;
+	margin:0;
+	height:100%;
+}
+
+.navibar .container{
+	height:30px;
+	vertical-align: middle;
+	display: grid;
+}
+.header .container{
+	display:grid;
+	grid-template-columns: 60% 40%;
+}
+
+.header {
+	margin: 0;
+	background-color: #333333;
+	height:250px;
+	color:aliceblue;
+}
+
+body {
+	margin:0;
+}
+
+.title {
+	padding:50px 0;
+	height:auto;
+}
+
+.authors {
+	margin-top:50px;
+	color:lightgray;
+}
+
+.title h1 {
+	font-size:35px;
+}
+
+.icon {
+	height: 20px;
+	border-width: 2px;
+	border-color:black;
+	border-radius: 2px;
+}
+
+.navirepo {
+	border:1px solid #AFAFAF;
+	border-radius: 2px;
+	width:130px;
+	height: 20px;
+	background-color:#F4F4F4;
+	float:right;
+	padding:0 5px;
+}
+
+.navirepo a {
+	height:20px;
+	display: grid;
+	place-items:center;
+	grid-template-columns: 25% 75%;
+	font-size:12px;
+	text-decoration: none; /* removes underline */
+  	color: inherit;         /* inherits color from parent */
+  	font-style:normal;     /* removes italic or oblique */
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+.navibar {
+	padding:5px 0;
+	position: sticky;
+	top: 0;
+	background: white;
+	z-index: 1000;
+	border:1px solid #D7D7D7;
+	background: #F5F5F5;
+}
+
+.navirepo a span {
+	vertical-align: middle;
+}
+
+.navirepo a img {
+}

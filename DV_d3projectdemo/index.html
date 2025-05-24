@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title Here</title>
+<!--	import remote packages, js, css here	-->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+	<script src="js/index.js"></script>
+	<script src="js/line.js"></script>
+	<script src="js/stack.js"></script>
+	<script src="js/stream.js"></script>
+	<script src="js/sankey.js"></script>
+	
+</head>
+<body>
+	<div class="header">
+		<div class="container">
+			<div class="title">
+				<h1>诺贝尔奖得主出版记录可视化</h1>
+				<h2></h2>
+				<div class="authors">于宸凌, 南宫圣光, 布咏诗, 郭铭康 - May 25, 2025</div>
+			</div>
+			<div class="logo">
+				<img src="image/nobelprize.png" alt="诺贝尔奖图像" style="width:auto; height:250px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+			</div>
+		</div>
+	</div>
+	<div class="navibar">
+		<div class="container">
+			<div class="navitag"></div>
+			<div class="navitag"></div>
+			
+			<div class="navirepo">
+				<a href="https://github.com/Sil1cateS/Sil1cateS.github.io/tree/main/DV_d3projectdemo">
+					<img src="image/gihub.svg" alt="github" class="icon">
+					<span>visit repository</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="section" id="intro">
+		<div class="container">
+			<h2>简介</h2>
+			<p>
+				在科学研究的历史长河里，诺贝尔奖一直是衡量科研成果卓越程度的重要标志，它嘉奖了众多为人类知识进步作出杰出贡献的科学家。然而，公众对获奖者的认知多局限于"获奖时刻"，对其学术成长轨迹、领域知识演进路径缺乏系统性理解。通过对诺贝尔奖得主发表记录数据集的分析和可视化，我们可以揭示科学巨匠的"全生命周期"学术行为，有助于弥合科学精英与公众之间的认知鸿沟。
+			</p>
+			<p>
+				此外，通过对这些数据的分析与可视化，我们能够系统地梳理科学研究的发展脉络，清晰地观察到不同学科在不同时期的兴衰起伏，以及学科交叉融合的动态过程，为预测未来科研发展趋势提供有力依据。
+			</p>
+		</div>
+	</div>
+    
+	<div class="section" id="section_name">
+		<div class="container description">
+			<h2>诺奖滞后与学术产出之"谜"</h2>
+			<p>
+				在诺贝尔奖的百年长河中，"诺奖滞后期"（即获奖论文的出版时间与获奖年份的时间差）如同一面棱镜，折射出科学发现的传播、验证与认可的多重轨迹。然而，在我们使用的数据集中，却出现了一些异常值——"诺奖滞后期"最小为-87年（玻尔，1922年获奖/2009年发表），类似的还包括威廉·维恩（1911年获奖/1983年出版，-72年）和雅罗斯拉夫·海罗夫斯基（1959年获奖/2010年出版，-51年）。这些"时间倒流"的案例，实则是学术史与数据采集碰撞出的特殊现象。</p>
+			<p>
+				以尼尔斯·玻尔为例，其1922年诺贝尔物理学奖的获奖论文《论原子和分子的构成》标注为2009年出版，时间差为-87年。这一矛盾源于数据集对论文标识符（MAG）的依赖：玻尔的原始论文可能因历史档案数字化滞后，被后人重新整理并赋予现代出版标识，导致时间差呈现负值。这些"幽灵论文"提示我们，科学史的数字化重建需谨慎对待文献的时空错位。</p>
+			<p>
+				下面，让我们将时间差范围缩小到0到10年，看看这些处于短期"诺奖滞后期"的诺奖得主情况：化学奖49人、物理学奖66人、生理学/医学奖62人。而这些获奖者又大多集中在20世纪上半叶，彼时，科学共同体规模较小，重大发现易被快速识别，且诺贝尔奖委员会倾向于奖励"当红"科学家。</p>
+			<p>
+				而随着时间推移，过去60年间，"诺奖滞后期"几乎翻了一番，这受到多种因素影响，比如：科学成果的指数增长，颠覆性研究愈发稀缺，"睡美人"论文的觉醒等等。</p>
+			<p>
+				您可以通过下方的折线图查看截止到2016年的物理学、化学、生理学/医学的诺贝尔奖得主的学术产出时间分布。折线图中的红色虚线表示获奖年份，其他的虚线则表示获奖论文的出版年份，在折线图下方，您也可以通过圆圈大小来直观感受不同诺奖得主的"诺奖滞后期"。大体上来说，诺奖得主的学术产出会有明显的"获奖前峰值"和"获奖后滑落"现象。</p>
+		</div>
+		<div class="container diagram">
+			<div class="diagramtitle">
+				<h3>诺贝尔奖得主学术产出时间分布</h3>
+			</div>
+			<div class="description">
+				<p>请选择一位诺贝尔奖得主，查看其在不同年份的出版记录数量变化。红色虚线表示获奖年份。</p>
+			</div>
+			<div class="controlpanel">
+				<label for="line-category-select">选择奖项类别：</label>
+				<select id="line-category-select">
+					<option value="Physics">Physics</option>
+					<option value="Chemistry">Chemistry</option>
+					<option value="Medicine">Medicine</option>
+				</select>
+				<label for="line-laureate-select" style="margin-left:16px;">选择得主：</label>
+				<select id="line-laureate-select"></select>
+			</div>
+			<div class="canvas">
+				<svg id="line-chart" width="850" height="600"></svg>
+			</div>
+		</div>
+		<div class="container description">
+			<p>
+				时间差的拉长不仅是学术界的"等待游戏"，更折射出科学生态的深层变迁：（1）在诺奖得主平均年龄突破50大关的当下，青年学者面临着"终身荣誉"的时间挤压；（2）若滞后期持续拉长，许多科学家可能因为去世而错过诺奖；（3）有一些突破性研究的价值可能跨越代际才被完全释放。
+			</p>
+		</div>
+	</div>
+	
+	<div class="footer">
+		<div class="container">
+			<div class="footcontent">
+			</div>
+		</div>
+	</div>
+    
+	
+</body>
+</html>
