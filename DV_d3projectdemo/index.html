@@ -7,6 +7,7 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://unpkg.com/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/sankey.css">
 	<script src="js/index.js"></script>
 	<script src="js/line.js"></script>
 	<script src="js/stack.js"></script>
@@ -19,7 +20,6 @@
 		<div class="container">
 			<div class="title">
 				<h1>诺贝尔奖得主出版记录可视化</h1>
-				<h2></h2>
 				<div class="authors">于宸凌, 南宫圣光, 布咏诗, 郭铭康 - May 25, 2025</div>
 			</div>
 			<div class="logo">
@@ -42,30 +42,25 @@
 	</div>
 	
 	<div class="section" id="intro">
-		<div class="container">
+		<div class="container description">
 			<h2>简介</h2>
-			<p>
-				在科学研究的历史长河里，诺贝尔奖一直是衡量科研成果卓越程度的重要标志，它嘉奖了众多为人类知识进步作出杰出贡献的科学家。然而，公众对获奖者的认知多局限于"获奖时刻"，对其学术成长轨迹、领域知识演进路径缺乏系统性理解。通过对诺贝尔奖得主发表记录数据集的分析和可视化，我们可以揭示科学巨匠的"全生命周期"学术行为，有助于弥合科学精英与公众之间的认知鸿沟。
+			<p>在科学研究的历史长河里，诺贝尔奖一直是衡量科研成果卓越程度的重要标志，它嘉奖了众多为人类知识进步作出杰出贡献的科学家。然而，公众对获奖者的认知多局限于"获奖时刻"，对其学术成长轨迹、领域知识演进路径缺乏系统性理解。通过对诺贝尔奖得主发表记录数据集的分析和可视化，我们可以揭示科学巨匠的"全生命周期"学术行为，有助于弥合科学精英与公众之间的认知鸿沟。
 			</p>
-			<p>
-				此外，通过对这些数据的分析与可视化，我们能够系统地梳理科学研究的发展脉络，清晰地观察到不同学科在不同时期的兴衰起伏，以及学科交叉融合的动态过程，为预测未来科研发展趋势提供有力依据。
+			<p>此外，通过对这些数据的分析与可视化，我们能够系统地梳理科学研究的发展脉络，清晰地观察到不同学科在不同时期的兴衰起伏，以及学科交叉融合的动态过程，为预测未来科研发展趋势提供有力依据。
 			</p>
 		</div>
 	</div>
     
-	<div class="section" id="section_name">
+	<div class="sepbar"></div>
+	
+	<div class="section" id="p1">
 		<div class="container description">
 			<h2>诺奖滞后与学术产出之"谜"</h2>
-			<p>
-				在诺贝尔奖的百年长河中，"诺奖滞后期"（即获奖论文的出版时间与获奖年份的时间差）如同一面棱镜，折射出科学发现的传播、验证与认可的多重轨迹。然而，在我们使用的数据集中，却出现了一些异常值——"诺奖滞后期"最小为-87年（玻尔，1922年获奖/2009年发表），类似的还包括威廉·维恩（1911年获奖/1983年出版，-72年）和雅罗斯拉夫·海罗夫斯基（1959年获奖/2010年出版，-51年）。这些"时间倒流"的案例，实则是学术史与数据采集碰撞出的特殊现象。</p>
-			<p>
-				以尼尔斯·玻尔为例，其1922年诺贝尔物理学奖的获奖论文《论原子和分子的构成》标注为2009年出版，时间差为-87年。这一矛盾源于数据集对论文标识符（MAG）的依赖：玻尔的原始论文可能因历史档案数字化滞后，被后人重新整理并赋予现代出版标识，导致时间差呈现负值。这些"幽灵论文"提示我们，科学史的数字化重建需谨慎对待文献的时空错位。</p>
-			<p>
-				下面，让我们将时间差范围缩小到0到10年，看看这些处于短期"诺奖滞后期"的诺奖得主情况：化学奖49人、物理学奖66人、生理学/医学奖62人。而这些获奖者又大多集中在20世纪上半叶，彼时，科学共同体规模较小，重大发现易被快速识别，且诺贝尔奖委员会倾向于奖励"当红"科学家。</p>
-			<p>
-				而随着时间推移，过去60年间，"诺奖滞后期"几乎翻了一番，这受到多种因素影响，比如：科学成果的指数增长，颠覆性研究愈发稀缺，"睡美人"论文的觉醒等等。</p>
-			<p>
-				您可以通过下方的折线图查看截止到2016年的物理学、化学、生理学/医学的诺贝尔奖得主的学术产出时间分布。折线图中的红色虚线表示获奖年份，其他的虚线则表示获奖论文的出版年份，在折线图下方，您也可以通过圆圈大小来直观感受不同诺奖得主的"诺奖滞后期"。大体上来说，诺奖得主的学术产出会有明显的"获奖前峰值"和"获奖后滑落"现象。</p>
+			<p>在诺贝尔奖的百年长河中，"诺奖滞后期"（即获奖论文的出版时间与获奖年份的时间差）如同一面棱镜，折射出科学发现的传播、验证与认可的多重轨迹。然而，在我们使用的数据集中，却出现了一些异常值——"诺奖滞后期"最小为-87年（玻尔，1922年获奖/2009年发表），类似的还包括威廉·维恩（1911年获奖/1983年出版，-72年）和雅罗斯拉夫·海罗夫斯基（1959年获奖/2010年出版，-51年）。这些"时间倒流"的案例，实则是学术史与数据采集碰撞出的特殊现象。</p>
+			<p>以尼尔斯·玻尔为例，其1922年诺贝尔物理学奖的获奖论文《论原子和分子的构成》标注为2009年出版，时间差为-87年。这一矛盾源于数据集对论文标识符（MAG）的依赖：玻尔的原始论文可能因历史档案数字化滞后，被后人重新整理并赋予现代出版标识，导致时间差呈现负值。这些"幽灵论文"提示我们，科学史的数字化重建需谨慎对待文献的时空错位。</p>
+			<p>下面，让我们将时间差范围缩小到0到10年，看看这些处于短期"诺奖滞后期"的诺奖得主情况：化学奖49人、物理学奖66人、生理学/医学奖62人。而这些获奖者又大多集中在20世纪上半叶，彼时，科学共同体规模较小，重大发现易被快速识别，且诺贝尔奖委员会倾向于奖励"当红"科学家。</p>
+			<p>而随着时间推移，过去60年间，"诺奖滞后期"几乎翻了一番，这受到多种因素影响，比如：科学成果的指数增长，颠覆性研究愈发稀缺，"睡美人"论文的觉醒等等。</p>
+			<p>您可以通过下方的折线图查看截止到2016年的物理学、化学、生理学/医学的诺贝尔奖得主的学术产出时间分布。折线图中的红色虚线表示获奖年份，其他的虚线则表示获奖论文的出版年份，在折线图下方，您也可以通过圆圈大小来直观感受不同诺奖得主的"诺奖滞后期"。大体上来说，诺奖得主的学术产出会有明显的"获奖前峰值"和"获奖后滑落"现象。</p>
 		</div>
 		<div class="container diagram">
 			<div class="diagramtitle">
@@ -89,11 +84,203 @@
 			</div>
 		</div>
 		<div class="container description">
-			<p>
-				时间差的拉长不仅是学术界的"等待游戏"，更折射出科学生态的深层变迁：（1）在诺奖得主平均年龄突破50大关的当下，青年学者面临着"终身荣誉"的时间挤压；（2）若滞后期持续拉长，许多科学家可能因为去世而错过诺奖；（3）有一些突破性研究的价值可能跨越代际才被完全释放。
+			<p>时间差的拉长不仅是学术界的"等待游戏"，更折射出科学生态的深层变迁：（1）在诺奖得主平均年龄突破50大关的当下，青年学者面临着"终身荣誉"的时间挤压；（2）若滞后期持续拉长，许多科学家可能因为去世而错过诺奖；（3）有一些突破性研究的价值可能跨越代际才被完全释放。
 			</p>
 		</div>
 	</div>
+    
+	<div class="sepbar"></div>
+	
+	<div class="section" id="p2">
+		<div class="container description">
+			<h2>学术行为与科研机构之"密"</h2>
+			<p>诺贝尔奖得主的成就，既是个人智慧的结晶，更是其背后科研生态的产物。为了揭示学术行为如何受机构平台塑造，我们根据获奖论文发表时的机构归属，绘制了顶尖科研机构的获奖分布图：</p>
+		</div>
+		<div class="container diagram">
+			<div class="diagramtitle">
+				<h3>Top 10 Nobel Prize-Winning Institutions by Research Field</h3>
+			</div>
+			<div class="canvas">
+				<div id="viz-container2">
+					<svg id="stack-plot"></svg>
+				</div>
+			</div>
+		</div>
+		<div id="tooltip2" class="tooltip" style="opacity: 0"></div>
+		<div class="container description">
+			<h3>1. 领域优势：谁在主导科学前沿？</h3>
+			<p>整体来看，<span class="highlight">哈佛大学</span>以34次总获奖数遥遥领先，成为唯一突破30次的机构，彰显其"全能型科研"的地位。尤其在化学（12次）和医学（15次）领域占据绝对优势。</p>
+			<h4>化学领域</h4>
+			<li><span class="highlight">哈佛大学（12次）</span>和<span class="highlight">马克斯·普朗克学会（11次）</span>领跑，反映美国与德国在基础化学研究的传统实力</li>
+			<li><span class="highlight">斯坦福大学（8次）</span>异军突起，可能与其在纳米技术、生物化学的跨学科创新相关</li>
+			<h4>医学领域</h4>
+			<li><span class="highlight">洛克菲勒大学（18次）</span>和<span class="highlight">哈佛大学（MIT）（15次）</span>形成双巨头。</li>
+			<li>前者聚焦分子生物学与免疫学，全校仅约 200 名独立研究员，却将 70% 资源集中于此；</li>
+			<li>后者依托医学院与附属医院资源， 医学院（哈佛医学院全美排名第 1）与 19 家附属医院有深度联动，拥有"全链条优势" ，形成 "基础研究 - 临床验证 - 药物开发" 的闭环。</li>
+			<li><span class="highlight">伦敦大学学院（11次）</span>仅凭医学奖跻身榜单，凸显英国在临床医学的深厚积累。</li>
+			<h4>物理领域</h4>
+			<li>由<span class="highlight">斯坦福大学（13次）</span>与<span class="highlight">麻省理工学院（11次）</span>主导，或许是因为这些学校的装置霸权优势，在粒子物理、量子计算等领域的顶尖实验室（如SLAC、林肯实验室）密切相关</li>
+			<li><span class="highlight">加州理工学院（10次）</span>紧贴第三，我们推测这依托于国家战略项目的模式，使其在天体物理、引力物理等领域持续产出。</li>
+			<li>加州理工的喷气推进实验室（JPL）虽名义上隶属 NASA，实则由该校代管，这种"高校-政府-航天"的独特模式使其<span class="highlight">垄断了美国深空探测研究。</span></li>
+			<h3>2. 机构策略模式分析</h3>
+			<li><span class="highlight">洛克菲勒大学(Rockfeller University)、美国国立卫生研究院（NIH）</span>和<span class="highlight">伦敦大学(UCL)</span>，分别斩获18次、12次和11次医学奖，但其他两个领域几乎没有得奖，体现<span style="color:blue">"单点突破、小而精"</span>的策略。</li>
+			<li><span class="highlight">哈佛大学</span>与<span class="highlight">马克斯·普朗克学会</span>则展现<span style="color:blue">"综合性、全面性"</span>的特点，获奖数量覆盖三大领域，没有特别明显的偏差。</li>
+			<h3>3. 历史机遇与国家政策分析</h3>
+			<h4>历史因素</h4>
+			<li><span class="highlight">斯坦福大学</span>与<span class="highlight">麻省理工学院</span>在20世纪后期崛起，物理领域反超剑桥、哥伦比亚等老牌名校。这或许与二战有关系：在二战期间，麻省理工学院就承担了许多与军事相关的科研项目，为美国的战争胜利做出了重要贡献。战后，美国政府加大了对麻省理工学院的科技投入，使其能够不断更新科研设备，扩大研究团队。</li>
+			<h4>国家政策</h4>
+			<li><span class="highlight">哈佛大学</span>在化学的优势植根于美国 19 世纪末以来对基础科学的系统性投入。该校化学系自成立以来，便以 "理论 - 实验" 结合为核心，例如 20 世纪初在物理化学领域的热力学研究，以及战后对生物大分子结构的探索（如 DNA 测序技术的早期突破）。</li>
+			<li>而<span class="highlight">马克斯·普朗克学会</span>作为欧洲代表，化学领域持续领先，但医学与物理奖项近年增长乏力，或受科研经费分散影响：随着欧洲各国科研投入的多元化以及研究领域的不断拓展，马克斯・普朗克学会面临着来自其他科研机构的竞争，导致其获得的科研经费相对减少，且经费在不同研究方向和项目之间的分配较为分散，难以集中资源在医学和物理领域开展大规模、有针对性的研究项目。</li>
+			<h3>4. 发展趋势与小结</h3>
+			<li>随着化学与物理的界限日益模糊（如材料科学的二维量子材料设计、能源技术的钙钛矿太阳能电池研发），<span class="highlight">跨学科机构（如斯坦福、MIT）</span>，凭借其灵活的资源整合能力，或成最大赢家。</li>
+			<li>通过这张图，我们不仅看到机构的荣誉榜单，更了解了诺贝尔奖背后的"生态密码"。这种视角，将我们对'获奖瞬间'的惊叹，转化为对'科学全生命周期'的理性认知</li>
+		</div>
+	</div>
+	
+	<div class="sepbar"></div>
+	
+	<div class="section" id="p3">
+		<div class="container description">
+			<h2>诺奖论文与普通论文之"异"</h2>
+			<p>通过对截至到2016年的诺奖论文的标题进行关键词抽取，我们可以窥见诺奖委员会在特定时代对何种主题的研究"青睐有加"，那么，这种趋势演变是否和主流的学界研究保持一致呢？为此，我们从Web of Science Core Collection数据库中筛选了physics，chemistry和medicine三个领域从1991年到2000年共10年间的论文（对于每个领域，我们从每一年随机抽取了1000篇论文，保证时间跨度从年初到年末，最后每个领域最终形成了一万篇的数据集），并对其标题进行关键词抽取，最终形成河流图。通过二者的对比，我们得以看出，在1991到2000年这10年间诺奖得主的研究重心与学界的研究重心有何差异，以及，诺奖是否会造成新的"研究热潮"。</p>
+
+			<h3>1. 各领域获奖论文关键词演化趋势</h3>
+			<h4>（1） 物理学——electron（电子）、quantum（量子）、atom（原子）</h4>
+		  <p>•1910s–1930s：原子结构成为研究热点。1913 年玻尔提出氢原子模型，标志着 "atom" 成为该时期的高频关键词，与卢瑟福的原子核模型、查德威克发现中子等成果密切相关。</p>
+		  <p>•1940s–1960s：电子实验研究和量子力学确立。电子的波粒二象性被实验证明，电子作为研究对象崛起；量子力学由薛定谔、海森堡等奠定理论基础，"quantum" 逐渐占据核心地位。</p>
+		  <p>•1970s–1990s：标准模型建立期，粒子物理和量子场论（QED、QCD）成为主导，诺贝尔奖频频授予相关研究，体现出 "quantum" 的学术权威地位。</p>
+			<h4>（2）化学——protein（蛋白质）、molecular（分子）、DNA</h4>
+		  <p>•1900s–1930s：以 "molecular" 为核心的传统有机合成与结构分析为主，代表经典化学研究框架。</p>
+		  <p>•1940s–1960s：蛋白质结构与 DNA 双螺旋发现成为重大突破。鲍林提出 α 螺旋结构，沃森-克里克揭示 DNA 结构，"protein" 和 "dna" 进入获奖论文视野。</p>
+		  <p>•1970s–1990s：分子生物学主导地位确立。PCR 技术、DNA 测序、蛋白质折叠等成为诺奖主题，"protein"、"dna" 主导关键研究。</p>
+			<h4>（3）生理学/医学—— cell（细胞）、nerve（神经）、liver（肝脏）</h4>
+		  <p>•1910s–1930s："nerve"、"cell" 关键词频出，聚焦神经结构、神经信号与细胞基础单位研究。</p>
+		  <p>•1940s–1960s：细胞器观测技术进步，细胞生理学逐渐系统化，"cell" 频次上升。</p>
+		  <p>•1970s–1990s：免疫细胞、肝功能与病毒机制的研究增强，"liver" 作为关键词逐渐出现。</p>
+			<h3>2. 获奖论文与普通论文的对比分析</h3>
+			<h4>（1）物理学</h4>
+		  <p>•获奖论文：以量子理论、基本粒子理论为主线，"quantum" 和 "electron" 贯穿核心。</p>
+		  <p>•普通论文：强调应用与实验，如 "magnetic"、"ion"、"beam" 等，聚焦磁共振、粒子束等技术主题。</p>
+		  <p>•结论：获奖论文更侧重基础理论创新，普通论文则服务于当下工程与实验需求。</p>
+			<h4>（2）化学</h4>
+		  <p>•获奖论文：以 "dna"、"protein" 为代表，融合生物技术与生命现象机制。</p>
+		  <p>•普通论文：集中于 "synthesis"、"catalyst"、"metal" 等传统合成与催化研究。</p>
+		  <p>•结论：获奖主题体现跨学科融合的引领性，普通论文反映传统领域的深化与应用。</p>
+			<h4>（3）医学</h4>
+		  <p>•获奖论文：强调 "cell" 机制，如干细胞、癌细胞、免疫细胞研究等基础生物学内容。</p>
+		  <p>•普通论文：关键词如 "clinical"、"therapy"、"cancer"，更注重实际治疗和诊断策略。</p>
+		  <p>•结论：前者专注于机制探索，后者聚焦于医疗实施，形成互补结构。</p>
+			<h3>3. 学科发展共通性与差异性总结</h3>
+		  <p>•物理学展现出最典型的基础学科特征，其诺贝尔奖主题往往代表理论物理范式的重大转变，如量子力学、标准模型等，不仅推动本学科发展，也深刻影响跨学科基础。</p>
+		  <p>•化学是转型最明显的领域，经历从传统合成到生物分子机制研究的转型期，代表学科交叉融合的典范，尤其在 DNA 与蛋白质研究中的快速突破凸显其核心地位。</p>
+		  <p>•医学则通过细胞机制的深入理解，推动干细胞治疗、再生医学与免疫治疗发展，其研究方向更紧密地服务于人类健康应用，具有高度实际意义。</p>
+		</div>
+		<div class="container diagram">
+			<h3>关键词流图对比（奖项论文 vs 一般论文）</h3>
+			<div class="description">
+				<p>请选择一位诺贝尔奖领域，查看其获奖论文关键词趋势与一般论文关键词趋势。</p>
+			</div>
+			<div class="controlpanel">
+				<label for="fieldSelect">选择领域：</label>
+				<select id="fieldSelect">
+					<option value="Chemistry">化学</option>
+					<option value="Physics">物理</option>
+					<option value="Medicine">医学</option>
+				</select>
+			</div>
+			<div class="diagramtitle"><h3>获奖论文关键词趋势</h3></div>
+			<div class="canvas">
+				<svg id="svg1" width="850" height="400"></svg>
+				<div class="legend" id="legend1"></div>
+			</div>
+			<div class="diagramtitle"><h3>一般论文关键词趋势</h3></div>
+			<div class="canvas">
+				<svg id="svg2" width="850" height="400"></svg>
+				<div class="legend" id="legend2"></div>
+			</div>
+		</div>
+		<div class="container description">
+			<p>时间差的拉长不仅是学术界的"等待游戏"，更折射出科学生态的深层变迁：（1）在诺奖得主平均年龄突破50大关的当下，青年学者面临着"终身荣誉"的时间挤压；（2）若滞后期持续拉长，许多科学家可能因为去世而错过诺奖；（3）有一些突破性研究的价值可能跨越代际才被完全释放。
+			</p>
+		</div>
+	</div>
+	
+	<div class="sepbar"></div>
+	
+	<div class="section" id="p4">
+		<div class="container description">
+			<h2>学科领域与期刊机构之"巅"</h2>
+			<p>正如不同学校有不同的优势学科，不同的期刊机构也会在不同的学科领域享有不同的声望。我们对诺奖得主的出版记录进行了分析，并将其绘制成了桑基图，以便您更直观的看出不同学科领域中那些最权威的期刊、机构分别是谁。您可以通过下方的图表进行筛选以查看您想看的图表。</p>
+		</div>
+		<div class="container diagram">
+			<div class="description">
+				<p>请选择桑基图的起点和终点，并选择查看是否清楚空值和仅限获奖论文的结果。</p>
+			</div>
+			<div class="sankeypanel">
+				<div class="form-group">
+            		<label for="source-select">选择源：</label>
+            		<select id="source-select" name="source">
+						<option value="Field" selected>领域</option>
+						<option value="Journal" >期刊</option>
+						<option value="Affiliation">机构</option>
+            		</select>
+        		</div>
+				<div class="form-group">
+            		<label for="target-select">选择终点：</label>
+            		<select id="target-select" name="target">
+						<option value="Field">领域</option>
+						<option value="Journal" selected>期刊</option>
+						<option value="Affiliation">机构</option>
+            		</select>
+        		</div>
+				<div class="form-group">
+            		<label for="dropna-select">清除空值：</label>
+            		<select id="dropna-select" name="dropna">
+						<option value="false" selected>否</option>
+						<option value="true" >是</option>
+            		</select>
+        		</div>
+				<div class="form-group">
+            		<label for="prized-select">仅获奖论文：</label>
+            		<select id="prized-select" name="prized">
+						<option value="NO" >否</option>
+						<option value="YES" selected>是</option>
+            		</select>
+        		</div>
+				<div class="form-group">
+					<label for="quantity">最小宽度阈值：</label>
+					<input type="number" 
+						   id="threshold" 
+						   name="threshold"
+						   min="1" 
+						   max="1000" 
+						   step="1"
+						   value="10">
+				</div>
+			</div>
+			<div class="diagramtitle">
+				<h3>诺贝尔奖得主学术产出时间分布</h3>
+			</div>
+			<div class="canvas">
+				<div id="sankey-chart"></div>
+			</div>
+		</div>
+		<div class="container description">
+			<p id="sankey-desc"></p>
+		</div>
+	</div>
+	
+	<div class="sepbar"></div>
+	
+	<div class="section" id="summary">
+		<div class="container description">
+			<h2>总结</h2>
+			<p>在科学研究的历史长河里，诺贝尔奖一直是衡量科研成果卓越程度的重要标志，它嘉奖了众多为人类知识进步作出杰出贡献的科学家。然而，公众对获奖者的认知多局限于"获奖时刻"，对其学术成长轨迹、领域知识演进路径缺乏系统性理解。通过对诺贝尔奖得主发表记录数据集的分析和可视化，我们可以揭示科学巨匠的"全生命周期"学术行为，有助于弥合科学精英与公众之间的认知鸿沟。</p>
+			<p>此外，通过对这些数据的分析与可视化，我们能够系统地梳理科学研究的发展脉络，清晰地观察到不同学科在不同时期的兴衰起伏，以及学科交叉融合的动态过程，为预测未来科研发展趋势提供有力依据。</p>
+		</div>
+	</div>
+	
+
 	
 	<div class="footer">
 		<div class="container">

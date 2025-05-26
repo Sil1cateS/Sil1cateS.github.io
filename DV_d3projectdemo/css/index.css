@@ -1,9 +1,83 @@
 /* CSS Document */
 
+body {
+            font-family: "Microsoft YaHei", "SimSun", Arial, sans-serif;
+            background: #fafbfc;
+            color: #222;
+            margin: 0;
+            padding: 0;
+}
+
+h2 { margin-top: 1.5em; color: #1a3557; font-size: 1.5em; }
+h3 { margin-top: 1.2em; color: #2c3e50; font-size: 1.15em; }
+.desc {
+            color: #555;
+            margin-bottom: 18px;
+            font-size: 1.05em;
+}
+.line-select-area {
+            margin-bottom: 24px;
+}
+.axis-label {
+            font-size: 0.95em;
+            fill: #444;
+}
+.highlight {
+            color: #007acc;
+            font-weight: bold;
+}
+.field-list {
+            margin-left: 25px;
+}
+.tooltip {
+            position: absolute;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            pointer-events: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            font-size: 1em;
+            color: #222;
+            min-width: 160px;
+            display: none;
+}
+/* 紧凑分析区块段落 */
+.container p,
+.container li,
+.container h3,
+.container h4 {
+            margin-top: 0;
+            margin-bottom: 0.8em;
+}
+.container,
+.container * {
+            line-height: 1.9 !important;
+}
+.legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px 18px;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 20px;
+}
+.legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            margin-right: 0;
+}
+.legend-color {
+            width: 16px;
+            height: 16px;
+            margin-right: 6px;
+            border-radius: 3px;
+}
+
 
 .container {
-	padding:0 20%;
-	margin:0;
+	margin: 0 calc((100% - 900px) / 2);
 	height:100%;
 }
 
@@ -60,7 +134,7 @@ body {
 }
 
 .navirepo a {
-	height:20px;
+	height:15px;
 	display: grid;
 	place-items:center;
 	grid-template-columns: 25% 75%;
@@ -84,7 +158,58 @@ body {
 
 .navirepo a span {
 	vertical-align: middle;
+	line-height: 1em;
 }
 
 .navirepo a img {
+}
+
+.tooltip {
+            position: absolute;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            pointer-events: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            font-size: 1em;
+            color: #222;
+            min-width: 160px;
+            display: none;
+}
+.description p {
+	display: block;
+	white-space: pre-line !important;
+	text-indent: 2em !important;
+	line-height: 1.9;
+}
+
+
+.footer {
+	background: #333333;
+	margin-top:100px;
+	height:100px;
+	border-top: 1px solid #AFAFAF;
+}
+
+.sepbar {
+	display: block;
+	margin:30px 25%;
+	background-color:#CCCCCC; 
+	border-radius: 1px;
+	height:1px;
+}
+
+
+.controlpanel {
+	display: block;
+	align-content: center;
+}
+
+.diagram {
+	padding:25px;
+	border: 1px solid #E4E4E4;
+	border-radius: 5px;
+	box-shadow: 0px 2px 8px 0 rgba(0,0,0,0.06);
+	margin-bottom:20px;
 }

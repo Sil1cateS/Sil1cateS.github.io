@@ -1,0 +1,82 @@
+[
+  {
+    "year": 1991,
+    "liquid": 62,
+    "synthesis": 23,
+    "catalyst": 31,
+    "metal": 59,
+    "molecular": 21
+  },
+  {
+    "year": 1992,
+    "liquid": 46,
+    "synthesis": 22,
+    "catalyst": 26,
+    "metal": 37,
+    "molecular": 44
+  },
+  {
+    "year": 1993,
+    "liquid": 47,
+    "synthesis": 36,
+    "catalyst": 43,
+    "metal": 24,
+    "molecular": 23
+  },
+  {
+    "year": 1994,
+    "liquid": 24,
+    "synthesis": 40,
+    "catalyst": 43,
+    "metal": 42,
+    "molecular": 30
+  },
+  {
+    "year": 1995,
+    "liquid": 67,
+    "synthesis": 17,
+    "catalyst": 61,
+    "metal": 55,
+    "molecular": 31
+  },
+  {
+    "year": 1996,
+    "liquid": 37,
+    "synthesis": 49,
+    "catalyst": 46,
+    "metal": 48,
+    "molecular": 32
+  },
+  {
+    "year": 1997,
+    "liquid": 20,
+    "synthesis": 59,
+    "catalyst": 113,
+    "metal": 49,
+    "molecular": 28
+  },
+  {
+    "year": 1998,
+    "liquid": 27,
+    "synthesis": 55,
+    "catalyst": 73,
+    "metal": 40,
+    "molecular": 53
+  },
+  {
+    "year": 1999,
+    "liquid": 21,
+    "synthesis": 72,
+    "catalyst": 19,
+    "metal": 31,
+    "molecular": 30
+  },
+  {
+    "year": 2000,
+    "liquid": 74,
+    "synthesis": 37,
+    "catalyst": 23,
+    "metal": 28,
+    "molecular": 19
+  }
+]

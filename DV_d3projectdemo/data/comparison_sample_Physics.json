@@ -1,0 +1,82 @@
+[
+  {
+    "year": 1991,
+    "magnetic": 90,
+    "electron": 82,
+    "beam": 41,
+    "ion": 72,
+    "quantum": 28
+  },
+  {
+    "year": 1992,
+    "magnetic": 76,
+    "electron": 28,
+    "beam": 43,
+    "ion": 21,
+    "quantum": 8
+  },
+  {
+    "year": 1993,
+    "magnetic": 47,
+    "electron": 91,
+    "beam": 62,
+    "ion": 108,
+    "quantum": 48
+  },
+  {
+    "year": 1994,
+    "magnetic": 86,
+    "electron": 73,
+    "beam": 15,
+    "ion": 55,
+    "quantum": 27
+  },
+  {
+    "year": 1995,
+    "magnetic": 65,
+    "electron": 44,
+    "beam": 80,
+    "ion": 32,
+    "quantum": 75
+  },
+  {
+    "year": 1996,
+    "magnetic": 60,
+    "electron": 56,
+    "beam": 28,
+    "ion": 67,
+    "quantum": 72
+  },
+  {
+    "year": 1997,
+    "magnetic": 60,
+    "electron": 54,
+    "beam": 52,
+    "ion": 92,
+    "quantum": 17
+  },
+  {
+    "year": 1998,
+    "magnetic": 25,
+    "electron": 41,
+    "beam": 32,
+    "ion": 41,
+    "quantum": 28
+  },
+  {
+    "year": 1999,
+    "magnetic": 54,
+    "electron": 30,
+    "beam": 44,
+    "ion": 22,
+    "quantum": 70
+  },
+  {
+    "year": 2000,
+    "magnetic": 50,
+    "electron": 35,
+    "beam": 79,
+    "ion": 46,
+    "quantum": 26
+  }
+]

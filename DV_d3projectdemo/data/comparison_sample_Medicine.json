@@ -1,0 +1,82 @@
+[
+  {
+    "year": 1991,
+    "clinical": 38,
+    "cancer": 30,
+    "cell": 73,
+    "radiation": 44,
+    "therapy": 35
+  },
+  {
+    "year": 1992,
+    "clinical": 28,
+    "cancer": 16,
+    "cell": 44,
+    "radiation": 32,
+    "therapy": 37
+  },
+  {
+    "year": 1993,
+    "clinical": 42,
+    "cancer": 48,
+    "cell": 39,
+    "radiation": 22,
+    "therapy": 31
+  },
+  {
+    "year": 1994,
+    "clinical": 32,
+    "cancer": 21,
+    "cell": 98,
+    "radiation": 48,
+    "therapy": 19
+  },
+  {
+    "year": 1995,
+    "clinical": 33,
+    "cancer": 25,
+    "cell": 38,
+    "radiation": 43,
+    "therapy": 40
+  },
+  {
+    "year": 1996,
+    "clinical": 36,
+    "cancer": 12,
+    "cell": 54,
+    "radiation": 14,
+    "therapy": 20
+  },
+  {
+    "year": 1997,
+    "clinical": 25,
+    "cancer": 40,
+    "cell": 83,
+    "radiation": 8,
+    "therapy": 23
+  },
+  {
+    "year": 1998,
+    "clinical": 29,
+    "cancer": 67,
+    "cell": 35,
+    "radiation": 24,
+    "therapy": 21
+  },
+  {
+    "year": 1999,
+    "clinical": 32,
+    "cancer": 29,
+    "cell": 41,
+    "radiation": 25,
+    "therapy": 29
+  },
+  {
+    "year": 2000,
+    "clinical": 18,
+    "cancer": 22,
+    "cell": 38,
+    "radiation": 11,
+    "therapy": 15
+  }
+]

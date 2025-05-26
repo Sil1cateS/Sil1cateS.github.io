@@ -1,0 +1,32 @@
+/* CSS Document */
+.node rect {
+      shape-rendering: crispEdges;
+ }
+.link {
+      fill: none;
+      stroke-opacity: 0.3;
+}
+
+.panel {
+	border: thin,#000000;
+	margin: 0%;
+}
+
+.sankeypanel {
+	display: grid;
+	grid-template-columns: 18% 18% 18% 18% 28%;
+}
+
+#sankey-chart {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  overflow-x: auto;
+}
+#sankey-chart svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
