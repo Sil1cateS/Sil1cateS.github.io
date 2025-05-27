@@ -44,10 +44,9 @@ h3 { margin-top: 1.2em; color: #2c3e50; font-size: 1.15em; }
 }
 /* 紧凑分析区块段落 */
 .container p,
-.container li,
 .container h3,
 .container h4 {
-            margin-top: 0;
+            margin-top: 0.5em;
             margin-bottom: 0.8em;
 }
 .container,
@@ -85,6 +84,8 @@ h3 { margin-top: 1.2em; color: #2c3e50; font-size: 1.15em; }
 	height:30px;
 	vertical-align: middle;
 	display: grid;
+	grid-template-columns: 85% 15%;
+	align-items: center;
 }
 .header .container{
 	display:grid;
@@ -124,20 +125,21 @@ body {
 }
 
 .navirepo {
-	border:1px solid #AFAFAF;
+	border:1px  #AFAFAF;
 	border-radius: 2px;
 	width:130px;
 	height: 20px;
 	background-color:#F4F4F4;
 	float:right;
-	padding:0 5px;
+	padding:0 ;
+	line-height: 20px;
 }
 
 .navirepo a {
 	height:15px;
 	display: grid;
 	place-items:center;
-	grid-template-columns: 25% 75%;
+	grid-template-columns: 20% 80%;
 	font-size:12px;
 	text-decoration: none; /* removes underline */
   	color: inherit;         /* inherits color from parent */
@@ -212,4 +214,50 @@ body {
 	border-radius: 5px;
 	box-shadow: 0px 2px 8px 0 rgba(0,0,0,0.06);
 	margin-bottom:20px;
+}
+
+.container li,
+.container span
+{
+	line-height: 1.5 !important;
+}
+
+.select {
+  width: 100%;
+  padding: 10px 35px 10px 15px;
+  font-size: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* 鼠标悬停效果 */
+.select:hover {
+  border-color: #a0a0a0;
+}
+
+/* 聚焦效果 */
+.select:focus {
+  outline: none;
+  border-color: #2196F3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+/* 自定义下拉箭头 */
+
+
+/* 下拉选项样式（注意：部分浏览器可能不支持） */
+.select option {
+  padding: 12px;
+  background: #fff;
+  color: #333;
+}
+
+.select option:hover {
+  background: #f5f5f5;
 }

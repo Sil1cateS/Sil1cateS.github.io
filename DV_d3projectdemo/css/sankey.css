@@ -23,10 +23,12 @@
   align-items: flex-start;
   width: 100%;
   overflow-x: auto;
+overflow: visible;
 }
 #sankey-chart svg {
   display: block;
   margin: 0 auto;
   max-width: 100%;
   height: auto;
+overflow: visible;
 }

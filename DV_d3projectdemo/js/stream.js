@@ -1,9 +1,11 @@
 // 河流图 chart3.js
+document.addEventListener("DOMContentLoaded", function() {
+
 const color = d3.scaleOrdinal()
   .domain(["electron", "quantum", "atom", "neutrino", "radiation", "protein", "synthesis", "molecular", "dna", "hydrogen", "cell", "acid", "nerve", "liver", "gene", "magnetic", "beam", "ion", "liquid", "catalyst", "metal", "clinical", "cancer", "therapy"])
   .range(["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf", "#ff9896", "#c5b0d5", "#c49c94", "#f7b6d2", "#dbdb8d", "#ffcc00", "#ffbb78", "#98df8a", "#aec7e8", "#ff9896", "#c49c94", "#c5b0d5", "#f7b6d2", "#9edae5"]);
 
-const tooltip = d3.select("#tooltip");
+const tooltip = d3.select("#stream-tooltip");
 
 const files = {
   "Chemistry": ["data/Chemistry_streamgraph_data_updated.json", "data/comparison_sample_Chemistry.json"],
@@ -12,6 +14,7 @@ const files = {
 };
 
 function drawField(field) {
+	
   Promise.all(files[field].map(f => d3.json(f))).then(([data1, data2]) => {
     drawStream("svg1", data1, 400, 40);
     drawStream("svg2", data2, 400, 25);
@@ -56,7 +59,7 @@ function drawStream(id, data, height, maxY) {
       d3.select(this).attr("opacity", 1).attr("stroke", "#222").attr("stroke-width", 2);
       tooltip
         .style("left", (event.pageX + 20) + "px")
-        .style("top", (event.pageY - 10) + "px")
+        .style("top", (event.pageY - 30) + "px")
         .style("opacity", 1)
         .html(`<span style='font-weight:bold;color:${color(keys[idx])}'>${keys[idx]}</span>`);
       d3.selectAll(`#${id.replace('svg','legend')} .legend-item`).filter((_,i)=>i===idx)
@@ -89,8 +92,11 @@ function drawLegend(id, keywords) {
   });
 }
 
-d3.select("fieldSelect").on("change", function () {
+const streamfield = d3.select("#fieldSelect").on("change", function () {
+	//console.log(this);
   drawField(this.value);
 });
 
 drawField("Chemistry"); 
+	
+});

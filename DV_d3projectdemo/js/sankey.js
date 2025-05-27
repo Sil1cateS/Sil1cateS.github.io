@@ -243,7 +243,7 @@ function updateText() {
     // 更新显示区域
     const container = d3.select("#sankey-desc")
         .html(""); // 清空容器
-
+	const stitle = d3.select("#sankey-title").html("");
     if (matchedEntries.length === 0) {
         container.append("div").text("请检查桑基图起点与终点是否相同。");
     } else {
@@ -252,6 +252,9 @@ function updateText() {
                 .attr("class", "text-block")
                 .text(entry.text);
 			//console.log(entry.text);
+			stitle.append("div")
+				.text(entry.title);
+			//console.log(stitle);
         });
     }
 }
@@ -365,7 +368,7 @@ function drawSankey(nodelist,linklist,options = {}){
 		height=600,
 		containerTag="#chart"
 	} = options;
-	console.log(containerTag);
+	//console.log(containerTag);
 	// 清除旧tooltip
     d3.select(".sankey-tooltip").remove();
 
@@ -464,13 +467,18 @@ function drawSankey(nodelist,linklist,options = {}){
             tooltip
                 .style("left", event.pageX + 10 + "px")
                 .style("top", event.pageY + 10 + "px")
-                .style("opacity", 1)
+                .style("opacity", 0.95)
                 .html(`
                     Source: ${d.source.name}<br>
                     Target: ${d.target.name}<br>
                     Value: ${d.value}
                 `);
         })
+		.on("mousemove",function(event, d) {
+            tooltip
+                .style("left", event.pageX + 10 + "px")
+                .style("top", event.pageY + 10 + "px")
+		})
         .on("mouseout", function(d) {
             d3.select(this).style("stroke-opacity", 0.3);
             tooltip.style("opacity", 0);
@@ -487,12 +495,17 @@ function drawSankey(nodelist,linklist,options = {}){
             tooltip
                 .style("left", event.pageX + 10 + "px")
                 .style("top", event.pageY + 10 + "px")
-                .style("opacity", 1)
+                .style("opacity", 0.95)
                 .html(`
                     Node: ${d.name}<br>
                     Total: ${d.value}
                 `);
         })
+		.on("mousemove",function(event, d) {
+            tooltip
+                .style("left", event.pageX + 10 + "px")
+                .style("top", event.pageY + 10 + "px")
+		})
         .on("mouseout", function(d) {
             d3.select(this).select("rect")
                 .attr("fill", d => color(d.name));

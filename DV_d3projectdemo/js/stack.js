@@ -1,6 +1,6 @@
 // index2.html 图表脚本，避免id冲突
-const width2 = 850, height2 = 400;
-const margin2 = { top: 40, right: 40, bottom: 40, left: 60 };
+const width2 = 850, height2 = 450;
+const margin2 = { top: 40, right: 40, bottom: 150, left: 60 };
 d3.json("data/top10_institutions.json").then(data => {
     data.forEach(d => {
         if (d.Affiliation !== "Unknown") {
@@ -53,16 +53,32 @@ d3.json("data/top10_institutions.json").then(data => {
                     <div><span>数量：</span>${d[1] - d[0]}</div>
                     <div><span>总获奖数：</span>${total}</div>
                 `);
-        })
+			const currentAffiliation = d.data.Affiliation;
+
+			// 淡化所有柱子 (设置透明度为0.3)
+			d3.selectAll(".bar")
+				.style("opacity", 0.3)
+				.style("stroke", "none");
+
+			// 高亮当前机构的所有柱子 (设置透明度1 + 边框)
+			 d3.select(this)
+				.style("opacity", 1)
+				.style("stroke", "#2c2c2d")
+				.style("stroke-width", 2);
+				//.style("filter", "drop-shadow(0 0 6px currentColor)"); 
+		})
         .on("mousemove", function(event) {
             d3.select("#tooltip2")
                 .style("left", (event.pageX + 15) + "px")
-                .style("top", (event.pageY - 30) + "px");
+                .style("top", (event.pageY - 130) + "px");
         })
         .on("mouseout", function() {
             d3.select("#tooltip2")
                 .style("opacity", 0)
                 .style("display", "none");
+			d3.selectAll(".bar")
+				.style("opacity", 1)
+				.style("stroke", "none");
         });
     svg.append("g")
         .attr("transform", `translate(0,${height2 - margin2.bottom})`)
@@ -70,14 +86,14 @@ d3.json("data/top10_institutions.json").then(data => {
         .selectAll("text")
         .attr("transform", "rotate(-36)")
         .style("text-anchor", "end")
-        .attr("dx", "-0.8em")
+        .attr("dx", "-0.5em")
         .attr("dy", "0.5em")
-        .style("font-size", "16px") ;
+        .style("font-size", "12px") ;
     svg.append("g")
         .attr("transform", `translate(${margin2.left},0)`)
         .call(d3.axisLeft(y).ticks(5));
     svg.append("text")
-        .attr("transform", `translate(${width2/2},${height2 - margin2.bottom/2})`)
+        .attr("transform", `translate(${width2/2},${height2 - margin2.bottom/4})`)
         .style("text-anchor", "middle")
         .text("Institutions")
         .style("font-size", "16px") 
