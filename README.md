@@ -15,4 +15,4 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-<a href="https://sil1cates.github.io/DV_d3projectdemo/">诺奖得主发表记录可视化<\a>
+<a href="https://sil1cates.github.io/DV_d3projectdemo/">诺奖得主发表记录可视化</a>
