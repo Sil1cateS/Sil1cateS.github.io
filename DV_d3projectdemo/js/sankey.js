@@ -53,6 +53,7 @@ function createLinks(data, sourceKey, targetKey, options = {}) {
   		filteredData = data.filter(item => {
     		return filterObjs.every(filter => {
       			const itemValue = item[filter.key];
+				if(itemValue === "any") return true; // 如果值为"any"，则不过滤
       			switch (filter.operator) {
         			case ">=": return itemValue >= filter.value;
 					case "!==": return itemValue !== filter.value;
@@ -271,6 +272,19 @@ function debounce(func, wait) {
 }
 
 
+function addOption(select_id,nodes){
+	const select=d3.select(select_id);
+	select.html("");
+	select.append("option")
+		.attr("value","any")
+		.text("Any");
+	nodes.forEach(node => {
+		select.append("option")
+			.attr("value", node.name)
+			.text(node.name);
+	});
+}
+
 
 
 //并行读取文件
@@ -289,6 +303,7 @@ function file_loader(folder_path) {
 		const dropnaSelect=d3.select("#dropna-select");
 		const prizedSelect=d3.select("#prized-select");
 		const thresholdInput=d3.select("#threshold");
+		const filter=d3.select("#sankey-filter");
 		const chartDiv = d3.select("#chart");
 		
 		sourceSelect.property("value", "Field");
@@ -296,22 +311,47 @@ function file_loader(folder_path) {
 		dropnaSelect.property("value", "true");
 		prizedSelect.property("value", "YES");
 		thresholdInput.property("value", 5);
+		filter.select("lable").html("Journal:");
+		filter.select("select").property("name", "Journal");
 		
 		function getConfigParams() {
+			const sourceKey = sourceSelect.property("value");
+			const targetKey = targetSelect.property("value");
+			const threshold = Number(thresholdInput.property("value"));
+			const dropna = dropnaSelect.property("value");
+			const prized = prizedSelect.property("value");
+			const filterkey = filter.select("select").property("name");
+			const keySet = new Set([sourceKey, targetKey]);
+			if (keySet.has(filterkey)) {
+				// Find the key not in sourceKey/targetKey
+				const allKeys = ["Field", "Affiliation", "Journal"];
+				const newFilterKey = allKeys.find(k => !keySet.has(k));
+				filter.select("select").property("name", newFilterKey);
+				filter.select("lable").html(newFilterKey + ":");
+				const filterNodes = createNodes(recordData, newFilterKey);
+				console.log(filterNodes);
+				addOption("#sankey-filter select", filterNodes);
+				filter.select("select").property("value", "any");
+			}
 			return {
-				sourceKey: sourceSelect.property("value"),
-				targetKey: targetSelect.property("value"),
-				threshold: Number(thresholdInput.property("value")),
-				filterObjs:[{
-					key:"Is prize-winning paper",
-					value:prizedSelect.property("value"),
-
+				sourceKey,
+				targetKey,
+				threshold,
+				filterObjs: [{
+					key: "Is prize-winning paper",
+					value: prized,
+				}, {
+					key: filter.select("select").property("name"),
+					value: filter.select("select").property("value"),
 				}],
-				dropEmpty: dropnaSelect.property("value"),
-				containerTag:"#sankey-chart",
+				dropEmpty: dropna,
+				containerTag: "#sankey-chart",
 			};
 		}
 		
+
+
+
 		const debouncedDraw = debounce(() => {
 			chartDiv.selectAll("svg").remove(); 
 		  	draw_specific_Sankey(recordData, getConfigParams());
